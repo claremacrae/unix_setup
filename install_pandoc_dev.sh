@@ -10,8 +10,8 @@ cd       $PANDOC_SETUP_DIR
 
 echo Setting up pandoc code in `pwd` ...
 
-# If you want to live dangerously, you can install the still-in-progress pandoc 1.11.2 from github.
-# You'll need git the Haskell Platform.
+# If you want to live dangerously, you can install the still-in-progress pandoc from github.
+# You'll need git and the Haskell Platform.
 
 # First, you'll need to install the new pandoc-types from the github repository:
 
