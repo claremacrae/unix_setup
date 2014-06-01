@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Taken from https://github.com/jgm/pandoc/wiki/Installing-the-development-version-of-pandoc-%28Currently-1.12%29
+# Taken from https://github.com/jgm/pandoc/wiki/Installing-the-development-version-of-pandoc
 
 # Set up my location
 cd
