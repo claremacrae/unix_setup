@@ -24,8 +24,8 @@ cd ..
 # Now install pandoc:
 
 git clone git://github.com/jgm/pandoc
-git submodule update --init
 cd pandoc
+git submodule update --init
 cabal install --force --enable-tests
 cabal test
 cd ..
