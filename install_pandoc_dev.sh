@@ -10,33 +10,36 @@ cd       $PANDOC_SETUP_DIR
 
 echo Setting up pandoc code in `pwd` ...
 
-# If you want to live dangerously, you can install the still-in-progress pandoc 1.11.2 from github.
-# You'll need git the Haskell Platform.
-
-sudo apt-get update
-sudo apt-get install git
-sudo apt-get install haskell-platform
-
-# First, you'll need to install the new pandoc-types from the github repository:
-
 git clone git://github.com/jgm/pandoc-types
+git clone git://github.com/jgm/citeproc-hs
+git clone https://github.com/claremacrae/pandoc.git
+git clone https://github.com/claremacrae/pandoc-templates.git
+
 cd pandoc-types
-cabal update
+git checkout bbae35cce0d81bae80e488eaf777537aa487e847
+cd ..
+
+cd citeproc-hs
+git checkout 2138963bfac7b5ee41762123395315830081cf2e
+cd ..
+
+cd pandoc
+git checkout dokuwiki
+cd ..
+
+cd pandoc-templates
+git checkout dokuwiki
+cd ..
+
+cp pandoc-templates/* pandoc/data/templates/
+
+cd pandoc-types
 cabal install --force
 cd ..
 
-# Now install the development version of citeproc-hs:
-
-git clone git://github.com/jgm/citeproc-hs
-# Note, this is a copy of the darcs repo; if you have darcs you can instead:
-# darcs get --lazy http://gorgias.mine.nu/repos/citeproc-hs
 cd citeproc-hs
 cabal install --force
 cd ..
 
-# Finally, get the pandoc source:
-
-git clone git://github.com/claremacrae/pandoc
 cd pandoc
-git submodule update --init
-cabal install --enable-tests
+cabal install
