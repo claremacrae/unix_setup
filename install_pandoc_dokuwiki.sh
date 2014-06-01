@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# Taken from https://github.com/jgm/pandoc/wiki/Installing-the-development-version-of-pandoc
+# and modified to pick up my development version, with dokuwiki output
+
+# Set up my location
+cd
+PANDOC_SETUP_DIR=~/develop/pandoc_dokuwiki
+mkdir -p $PANDOC_SETUP_DIR
+cd       $PANDOC_SETUP_DIR
+
+echo Setting up dokuwiki version of pandoc code in `pwd` ...
+
+# If you want to live dangerously, you can install the still-in-progress pandoc 1.11.2 from github.
+# You'll need git the Haskell Platform.
+
+# First, you'll need to install the new pandoc-types from the github repository:
+
+git clone git://github.com/jgm/pandoc-types
+cd pandoc-types
+cabal update
+cabal install --force
+cd ..
+
+# Now install pandoc:
+
+git clone git://github.com/jgm/pandoc
+cd pandoc
+git submodule update --init
+cabal install --force --enable-tests
+cabal test
+cd ..
+
+# And finally pandoc-citeproc:
+
+git clone git://github.com/jgm/pandoc-citeproc
+cd pandoc-citeproc
+cabal install --enable-tests
+cabal test
