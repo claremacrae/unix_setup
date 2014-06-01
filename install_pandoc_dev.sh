@@ -13,10 +13,6 @@ echo Setting up pandoc code in `pwd` ...
 # If you want to live dangerously, you can install the still-in-progress pandoc 1.11.2 from github.
 # You'll need git the Haskell Platform.
 
-sudo apt-get update
-sudo apt-get install git
-sudo apt-get install haskell-platform
-
 # First, you'll need to install the new pandoc-types from the github repository:
 
 git clone git://github.com/jgm/pandoc-types
