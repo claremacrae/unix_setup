@@ -25,18 +25,18 @@ cabal update
 cabal install --force
 cd ..
 
-# Now install the development version of citeproc-hs:
+# Now install pandoc:
 
-git clone git://github.com/jgm/citeproc-hs
-# Note, this is a copy of the darcs repo; if you have darcs you can instead:
-# darcs get --lazy http://gorgias.mine.nu/repos/citeproc-hs
-cd citeproc-hs
-cabal install --force
+git clone git://github.com/jgm/pandoc
+git submodule update --init
+cd pandoc
+cabal install --force --enable-tests
+cabal test
 cd ..
 
-# Finally, get the pandoc source:
+# And finally pandoc-citeproc:
 
-git clone git://github.com/claremacrae/pandoc
-cd pandoc
-git submodule update --init
+git clone git://github.com/jgm/pandoc-citeproc
+cd pandoc-citeproc
 cabal install --enable-tests
+cabal test
