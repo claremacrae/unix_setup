@@ -15,7 +15,9 @@ echo Setting up pandoc code in `pwd` ...
 
 # First, you'll need to install the new pandoc-types from the github repository:
 
-git clone git://github.com/jgm/pandoc-types
+if [ ! -d pandoc-types ]; then
+    git clone git://github.com/jgm/pandoc-types
+fi
 cd pandoc-types
 cabal update
 cabal install --force
@@ -23,7 +25,9 @@ cd ..
 
 # Now install pandoc:
 
-git clone git://github.com/jgm/pandoc
+if [ ! -d pandoc ]; then
+    git clone git://github.com/jgm/pandoc
+fi
 cd pandoc
 git submodule update --init
 cabal install --force --enable-tests
@@ -32,7 +36,9 @@ cd ..
 
 # And finally pandoc-citeproc:
 
-git clone git://github.com/jgm/pandoc-citeproc
+if [ ! -d pandoc-citeproc ]; then
+    git clone git://github.com/jgm/pandoc-citeproc
+fi
 cd pandoc-citeproc
 cabal install --enable-tests
 cabal test

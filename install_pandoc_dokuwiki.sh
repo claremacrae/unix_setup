@@ -16,7 +16,9 @@ echo Setting up dokuwiki version of pandoc code in `pwd` ...
 
 # First, you'll need to install the new pandoc-types from the github repository:
 
-git clone git://github.com/jgm/pandoc-types
+if [ ! -d pandoc-types ]; then
+    git clone git://github.com/jgm/pandoc-types
+fi
 cd pandoc-types
 git checkout bbae35cce0d81bae80e488eaf777537aa487e847
 cabal update
@@ -25,14 +27,18 @@ cd ..
 
 # Now clone my copy of pandoc-templates:
 
-git clone https://github.com/claremacrae/pandoc-templates.git
+if [ ! -d pandoc-templates ]; then
+    git clone https://github.com/claremacrae/pandoc-templates.git
+fi
 cd pandoc-templates
 git checkout dokuwiki
 cd ..
 
 # Now install pandoc:
 
-git clone https://github.com/claremacrae/pandoc.git
+if [ ! -d pandoc ]; then
+    git clone https://github.com/claremacrae/pandoc.git
+fi
 cd pandoc
 git checkout dokuwiki
 #git submodule update --init
@@ -49,7 +55,10 @@ cd ..
 #git checkout 2138963bfac7b5ee41762123395315830081cf2e
 #cd ..
 
-git clone git://github.com/jgm/pandoc-citeproc
+
+if [ ! -d pandoc-citeproc ]; then
+    git clone git://github.com/jgm/pandoc-citeproc
+fi
 cd pandoc-citeproc
 cabal install --enable-tests
 cabal test
