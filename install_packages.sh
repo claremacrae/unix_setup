@@ -19,8 +19,8 @@
 
 sudo apt-get install build-essential checkinstall
 
-# Version control tools (mercurial has already been installed)
-sudo apt-get install cvs subversion git-core
+# Version control tools
+sudo apt-get install cvs subversion git-core mercurial
 
 # Make-alikes
 sudo apt-get install autoconf automake cmake scons
