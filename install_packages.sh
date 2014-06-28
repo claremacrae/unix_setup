@@ -20,7 +20,7 @@
 sudo apt-get install build-essential checkinstall
 
 # Version control tools
-sudo apt-get install cvs subversion git-core mercurial
+sudo apt-get install cvs subversion git-core gitg gitk mercurial
 
 # Make-alikes
 sudo apt-get install autoconf automake cmake scons
