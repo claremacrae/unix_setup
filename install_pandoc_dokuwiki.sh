@@ -32,6 +32,8 @@ if [ ! -d pandoc-templates ]; then
 fi
 cd pandoc-templates
 git checkout dokuwiki
+git remote add jgm git://github.com/jgm/pandoc-templates
+git remote -v
 cd ..
 
 # Now install pandoc:
@@ -41,6 +43,8 @@ if [ ! -d pandoc ]; then
 fi
 cd pandoc
 git checkout dokuwiki
+git remote add jgm git://github.com/jgm/pandoc
+git remote -v
 #git submodule update --init
 cp ../pandoc-templates/* data/templates/
 cabal install --force --enable-tests
