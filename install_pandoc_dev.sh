@@ -32,6 +32,7 @@ cd pandoc
 git submodule update --init
 cabal install --force --enable-tests
 cabal test
+cat dist/test/pandoc-1.13-test-pandoc.log
 cd ..
 
 # And finally pandoc-citeproc:
@@ -42,3 +43,5 @@ fi
 cd pandoc-citeproc
 cabal install --enable-tests
 cabal test
+cat dist/test/pandoc-citeproc-0.4-test-pandoc-citeproc.log
+
