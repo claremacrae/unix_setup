@@ -2,6 +2,10 @@
 
 # Copy of https://raw.githubusercontent.com/nagygergo/jetbrains-toolbox-install/c6c0a8c94f4748e77317951f384331eebe2d8412/jetbrains-toolbox.sh
 
+# Force execution to halt if there are any errors in this script:
+set -e
+set -o pipefail
+
 [ $(id -u) != "0" ] && exec sudo "$0" "$@"
 echo -e " \e[94mInstalling Jetbrains Toolbox\e[39m"
 echo ""
