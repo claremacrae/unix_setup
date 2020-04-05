@@ -1,37 +1,20 @@
 #!/bin/sh
 
-# http://packages.ubuntu.com/quantal/build-essential
-# dpkg-dev (>= 1.13.5)
-#    Debian package development tools 
-#
-# g++ (>= 4:4.4.3)
-#    GNU C++ compiler 
-#
-# gcc (>= 4:4.4.3)
-#    GNU C compiler 
-#
-# libc6-dev
-#    Embedded GNU C Library: Development Libraries and Header Files 
-# or libc-dev
-#    virtual package provided by libc6-dev 
-#
-# make 
-
 sudo apt-get install build-essential checkinstall
 
 # Version control tools
-sudo apt-get install cvs subversion git-core gitg gitk mercurial
+sudo apt-get install git-core gitg gitk mercurial
 
 # Make-alikes
-sudo apt-get install autoconf automake cmake scons
+sudo apt-get install cmake
 
 # General editors
-sudo apt-get install bluefish geany nedit scite
+sudo apt-get install geany nedit kate
 
 # Differencing tools
 sudo apt-get install kdiff3-qt meld
 
 # clang-specific requirements
-sudo apt-get install libtool m4 texinfo texi2html
+# sudo apt-get install libtool m4 texinfo texi2html
 # tetex-bin
 
